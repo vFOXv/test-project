@@ -16,3 +16,4 @@ products = ["Молоко", "Сыр", "Мясо"]
 # print(*products, sep=', ')
 print(*products, sep=' + ', end=' = ')
 print("100")
+asdasdasd
