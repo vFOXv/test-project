@@ -11,33 +11,24 @@
 # stop - конец диапазона
 # step - шаг (1 по умолчанию)
 
-# print(list(range(5)))
-# print(list(range(2, 5)))
-# print(list(range(2, 5, 2)))
+print(list(range(5)))
+print(list(range(2, 5)))
+print(list(range(2, 5, 2)))
 
 
 # Пример итерации по списку через range
 
-# print("Введите 5 последних прочитанных вами книг")
-# books = []
-#
-# for i in range(5):
-#     book = input("Введите название книги: ")
-#     books.append(book)
-#
-# print(books)
-#
-# for i in range(5, 0, -1):
-#     print(books[i - 1])
+print("Введите 5 последних прочитанных вами книг")
+books = []
 
+for i in range(5):
+    book = input("Введите название книги: ")
+    books.append(book)
 
+print(books)
 
-
-
-
-
-
-
+for i in range(5, 0, -1):
+    print(books[i - 1])
 
 
 # Когда использовать enumerate():
@@ -47,15 +38,6 @@
 # enumerate(iterable, start=0)
 # iterable - итерируемый объект
 # start - начальное значение индекса
-
-
-
-
-
-
-
-
-
 
 
 products = ["Молоко", "Сыр", "Мясо"]
