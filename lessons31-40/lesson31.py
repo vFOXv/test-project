@@ -136,16 +136,7 @@ while True:
     elif action == "atb":
         if current_page in [1, 2, 3]:
             product_ids_string = input("Введите через запятую id добавляемых в корзину товаров: ")
-            products_to_add_to_basket = []
-
-            for product_id in product_ids_string.split(","):
-                search_result = [product for product in products_list if product["id"] == product_id]
-                product = search_result[0] if search_result else None
-
-                if product:
-                    products_to_add_to_basket.append(product)
-                else:
-                    print(f"Товар с id {product_id} не найден.")
+            products_to_add_to_basket = [product for product in products_list if product["id"] in product_ids_string.split(",")]
 
             for product in products_to_add_to_basket:
                 if product["id"] in basket:
