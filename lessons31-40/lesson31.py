@@ -136,16 +136,19 @@ while True:
     elif action == "atb":
         if current_page in [1, 2, 3]:
             product_ids_string = input("Введите через запятую id добавляемых в корзину товаров: ")
-            products_to_add_to_basket = [product for product in products_list if product["id"] in product_ids_string.split(",")]
+            product_ids = product_ids_string.split(",")
+            products_to_add_to_basket = [{**product, "quantity": product_ids.count(product["id"])}
+                                         for product in products_list
+                                         if product["id"] in product_ids]
 
             for product in products_to_add_to_basket:
                 if product["id"] in basket:
-                    basket[product["id"]]["quantity"] += 1
+                    basket[product["id"]]["quantity"] += product["quantity"]
                 else:
-                    basket[product["id"]] = product.copy()
-                    basket[product["id"]]["quantity"] = 1
+                    basket[product["id"]] = product
+                    basket[product["id"]]["quantity"] = product["quantity"]
 
-                print(f"Товар {product['name']} добавлен в корзину.")
+                print(f"Товар {product['name']} x {product['quantity']} шт. добавлен в корзину.")
         else:
             print("Текущая страница не поддерживает добавление в корзину.")
 
