@@ -88,7 +88,8 @@ products_list = [
     {"id": "13", "category": "laptops", "is_top": False, "name": "Dell XPS 13", "price": 1200, "quantity": 3},
     {"id": "14", "category": "computers", "is_top": True, "name": "Acer Aspire", "price": 1100, "quantity": 7},
     {"id": "15", "category": "smartphones", "is_top": False, "name": "Sony Xperia", "price": 750, "quantity": 5},
-    {"id": "16", "category": "laptops", "is_top": False, "name": "Microsoft Surface Laptop", "price": 1300, "quantity": 2},
+    {"id": "16", "category": "laptops", "is_top": False, "name": "Microsoft Surface Laptop", "price": 1300,
+     "quantity": 2},
 ]
 
 basket = {}
@@ -116,40 +117,45 @@ while True:
 
     if current_page == 1:
         print("\nГлавная страница:")
+        # Ваш код для отображения главной страницы
 
     elif current_page == 2:
         print("\nКатегории товаров:")
+        # Ваш код для отображения страницы категорий
 
     elif current_page == 3:
         print("\nСтраница поиска:")
+        # Ваш код для отображения страницы поиска
 
     elif current_page == 4:
         print("\nКорзина:")
-
-    elif current_page == 5:
-        print("Выход из программы.")
-        break
+        # Ваш код для отображения корзины
 
     else:
         print("Указанная страница не поддерживается.")
         continue
 
     if action == "mtp":
+        # Ваш код для перехода на другую страницу
 
     elif action == "atb":
         if current_page in [1, 2, 3]:
-
+            # Ваш код для добавления в корзину
         else:
             print("Текущая страница не поддерживает добавление в корзину.")
 
     elif action == "sc":
         if current_page == 2:
-
+            # Ваш код для выбора категории
         else:
             print("Текущая страница не поддерживает выбор категории товаров.")
 
     elif action == "s":
         if current_page == 3:
-
+            # Ваш код для поиска по категориям и поисковым запросам
         else:
             print("Текущая страница не поддерживает поиск товаров.")
+
+    elif action == "exit":
+        print("Выход из программы.")
+        break
