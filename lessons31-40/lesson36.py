@@ -1,69 +1,52 @@
-# Исключения - try и except
+# Dictionary comprehensions - Практика
+
+employee_projects = {
+    "Alice": {"project_1", "project_3"},
+    "Bob": {"project_2"},
+    "Charlie": {"project_1", "project_2", "project_3"},
+    "David": set(),  # Незагруженный сотрудник
+    "Eve": {"project_3"}
+}
 
 
-# Исключения - это специальные объекты, которые могут возникнуть при выполнении кода
-# Исключения используются для обработки ошибок
-# Когда возникает исключение, программа прерывается и выводится сообщение об ошибке
-# Для обработки исключений используются блоки try и except
+employee_projects_quantity = {
+    employee: len(projects)
+    for employee, projects in employee_projects.items()
+}
+print(employee_projects_quantity)
 
 
-# Примеры встроенных исключений в Python
-
-# ZeroDivisionError - это исключение, которое возникает при делении на ноль
-# TypeError - это исключение, которое возникает при неправильном использовании типов данных
-# ValueError - это исключение, которое возникает при использовании значения правильного типа, но неподходящего
-# NameError - это исключение, которое возникает при отсутствии переменных в коде
-# IndexError - это исключение, которое возникает при неверном использовании индексов в списке
-# KeyError - это исключение, которое возникает при отсутствии ключа в словаре
-
-
-# Синтаксис исключений в Python
-
-# try:
-#     ...
-# except <exception>:
-#     ...
+employee_projects_mates = {
+    employee: {
+        mate
+        for mate, mate_projects in employee_projects.items()
+        if mate != employee and mate_projects.intersection(projects)
+    }
+    for employee, projects in employee_projects.items()
+}
+print(employee_projects_mates)
 
 
-# Примеры использования исключений в Python
-
-# Обработка одиночного исключения
-
-try:
-    division_result = 1 / 0
-    print(division_result)
-except ZeroDivisionError:
-    print("Ошибка деления на ноль!")
+employee_without_work = {
+    employee: projects
+    for employee, projects in employee_projects.items()
+    if not projects
+}
+print(employee_without_work)
 
 
-# Обработка нескольких исключений
-
-try:
-    division_result = "1" / 0
-except ZeroDivisionError:
-    print("Ошибка деления на ноль!")
-except TypeError:
-    print("Неправильное использование типов данных!")
-
-
-# Сохранение исключения в переменной
-
-try:
-    division_result = 1 / 0
-except ZeroDivisionError as zde:
-    print(f"Ошибка деления на ноль: {zde}")
-except TypeError as te:
-    print(f"Неправильное использование типов данных: {te}")
-
-
-# Обработка неизвестных исключений
-
-try:
-    large_number = 10 ** 1000
-    division_result = large_number * 10 / 1
-except ZeroDivisionError:
-    print("Ошибка деления на ноль!")
-except TypeError:
-    print("Неправильное использование типов данных!")
-except Exception as ex:
-    print(f"Неизвестное исключение: {ex}")
+unique_projects = {
+    project
+    for projects in employee_projects.values()
+    for project in projects
+}
+print(unique_projects)
+project_employees = {
+    project: {
+        employee
+        for employee, projects in employee_projects.items()
+        if project in projects
+    }
+    for project in unique_projects
+}
+print(project_employees)
