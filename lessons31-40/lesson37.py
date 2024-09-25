@@ -39,7 +39,7 @@ except ZeroDivisionError:
 # Обработка нескольких исключений
 
 try:
-    division_result = "1" / 0
+    division_result = 1 / 0
 except ZeroDivisionError:
     print("Ошибка деления на ноль!")
 except TypeError:
