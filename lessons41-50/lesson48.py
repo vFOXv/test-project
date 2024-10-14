@@ -10,7 +10,7 @@ with open("lesson47_large_log_file.txt", "r", encoding="utf-8") as file:
         if "ERROR" in line:
             print(line.strip())
 
-# Задание #2: Задание #2: Чтение и форматирование контактов
+# Задание #2: Чтение и форматирование контактов
 with open("lesson47_contacts.txt", "r", encoding="utf-8") as file:
     with open("formatted_contacts.txt", "w", encoding="utf-8") as output_file:
         for line in file:
