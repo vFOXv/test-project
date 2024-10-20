@@ -1,9 +1,0 @@
-{
-    "name": "Иван",
-    "age": 30,
-    "city": "Москва",
-    "images": {
-        "avatar": "https://via.placeholder.com/150",
-        "cover": "https://via.placeholder.com/150"
-    }
-}
