@@ -1,3 +1,5 @@
 .idea
 __pycache__
 .venv
+*_private.md
+*_private.py

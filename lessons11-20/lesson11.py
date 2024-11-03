@@ -7,23 +7,9 @@ print("\nФорматирование строк\n" + "-" * 50)
 name = "John"
 age = 25
 
-# print("My name is " + name + " and I am " + str(age) + " years old")
-#
-# print("My name is {} and I am {} years old".format(name, age))
-
+print("My name is " + name + " and I am " + str(age) + " years old")
+print("My name is {} and I am {} years old".format(name, age))
 print(f"My name is {name} and I am {age} years old")
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Отладочная печать
@@ -32,21 +18,11 @@ print("\nОтладочная печать\n" + "-" * 50)
 name = "John"
 age = 25
 
-# print("Имя: ", name)
-# print("Возраст: ", age)
+print("Имя: ", name)
+print("Возраст: ", age)
 
 print(f"{name = }")
 print(f"{age = }")
-
-
-
-
-
-
-
-
-
-
 
 
 # Сырые строки

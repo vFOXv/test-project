@@ -4,19 +4,19 @@
 # and - логическое И
 # or - логическое ИЛИ
 
-# print("\nЛогическое И\n" + "-" * 50)
-# print(True and True)
-# print(True and False)
-# print(False and False)
+print("\nЛогическое И\n" + "-" * 50)
+print(True and True)
+print(True and False)
+print(False and False)
 
-# print("\nЛогическое ИЛИ\n" + "-" * 50)
-# print(True or True)
-# print(False or True or False or False)
-# print(False or False)
+print("\nЛогическое ИЛИ\n" + "-" * 50)
+print(True or True)
+print(False or True or False or False)
+print(False or False)
 
-# print("\nЛогическое НЕ\n" + "-" * 50)
-# print(not True)
-# print(not False)
+print("\nЛогическое НЕ\n" + "-" * 50)
+print(not True)
+print(not False)
 
 
 
@@ -55,7 +55,7 @@
 
 
 # Сравнение чисел
-# print("\nСравнение чисел\n" + "-" * 50)
+print("\nСравнение чисел\n" + "-" * 50)
 
 # == - равенство (length == 10)
 # != - неравенство (length != 10)

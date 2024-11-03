@@ -2,8 +2,8 @@
 
 
 # input() - функция для ввода данных
-# name = input("Ваше имя: ")
-# print(name)
+name = input("Ваше имя: ")
+print(name)
 
 
 # print() - функция для вывода данных
@@ -11,8 +11,9 @@
 
 products = ["Молоко", "Сыр", "Мясо"]
 
-# print(*products)
-# print(*products, sep=', ', end='!')
-# print(*products, sep=', ')
+print(*products)
+print(*products, sep=', ')
+print(*products, sep=', ', end='!')
+print(*products, sep=', ')
 print(*products, sep=' + ', end=' = ')
 print("100")
