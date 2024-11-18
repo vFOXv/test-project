@@ -17,11 +17,11 @@ for person in data:
     print(f'{person["name"]} живет в городе {person["city"]}.')
 
 
-# # ? Пример 2. Чтение строки в формате JSON
-#
-# json_string = '[{"name": "Саймон", "age": 25, "city": "Нью-Йорк"}, {"name": "Алиса", "age": 30, "city": "Лондон"}]'
-# data = json.loads(json_string)
-# print(data)
-#
-# for person in data:
-#     print(f'{person["name"]} живет в городе {person["city"]}.')
+# ? Пример 2. Чтение строки в формате JSON
+
+json_string = '[{"name": "Саймон", "age": 25, "city": "Нью-Йорк"}, {"name": "Алиса", "age": 30, "city": "Лондон"}]'
+data = json.loads(json_string)
+print(data)
+
+for person in data:
+    print(f'{person["name"]} живет в городе {person["city"]}.')
