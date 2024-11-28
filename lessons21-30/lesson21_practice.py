@@ -50,4 +50,20 @@
 
 
 # Ваше решение:
+book_list = ['Гарри Поттер', 'Марсианские бои', 'Властелин Колец', 'Таинственный остров', 'Хроники Нарнии', 'Стражи Галактики', 'Одиссея']
 
+for iter, item in enumerate(book_list):
+    print(f"{iter+1}. {item}")
+
+for iter, item in enumerate(book_list):
+    if len(item) > 15:
+        book_list.remove(item)
+
+book_list.append('1984')
+book_list.append('Атомные привычки')
+
+book_list.sort(key=len)
+
+print('\n')
+for iter, item in enumerate(book_list):
+    print(f"{iter+1}. {item}")
