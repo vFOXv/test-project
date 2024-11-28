@@ -27,3 +27,16 @@
 #   - Списки (lesson19)
 
 # Ваше решение:
+
+
+my_list = list()
+while len(my_list) < 5:
+    grade = input("Enter person's grade(1-5): ")
+    if grade.isdigit() and (int(grade) <= 5) and (int(grade) >= 1):
+        my_list.append(int(grade))
+        print("Number of entered ratings are:" + str(len(my_list)))
+    else:
+        print("You entered incorrect value!")
+
+my_average = str(sum(my_list)/len(my_list))
+print("Average rating is: " + my_average)
