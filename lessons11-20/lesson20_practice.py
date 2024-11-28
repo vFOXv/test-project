@@ -32,3 +32,21 @@
 #   - Циклы for (lesson18)
 #   - Списки (lesson19)
 #   - Методы списков (lesson20)
+
+my_list = list()
+my_list.append('Гарри Поттер')
+my_list.append('Властелин колец')
+my_list.append('Преступление и наказание')
+my_list.append('Мастер и Маргарита')
+my_list.append('Анна Каренина')
+my_list.extend(['Унесенные ветром', 'Война и мир'])
+
+my_list.sort()
+i = 0
+for item in my_list:
+    my_list[i] = item.upper()
+    i+=1
+print(my_list)
+book = 'Война и мир'
+my_list.remove(book.upper())
+print(my_list)

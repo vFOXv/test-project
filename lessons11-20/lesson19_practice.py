@@ -28,7 +28,6 @@
 
 # Ваше решение:
 
-
 my_list = list()
 while len(my_list) < 5:
     grade = input("Enter person's grade(1-5): ")
