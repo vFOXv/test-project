@@ -30,4 +30,22 @@
 
 
 # Ваше решение:
+average_rating = {}
 
+term_1 = (('Иванов', 5),('Петров', 4), ('Кузнецов', 5))
+term_2 = (('Иванов', 4), ('Петров', 5), ('Сидоров', 3))
+
+collect_1 = dict(term_1)
+collect_2 = dict(term_2)
+
+for key_1, value_1 in collect_1.items():
+    for key_2, value_2 in collect_2.items():
+        if key_1 == key_2:
+            average_rating[key_1] = ((value_1 + value_2) / 2)
+        elif (not key_1 in collect_2) and (not key_1 in average_rating):
+            average_rating[key_1] = value_1
+        elif (not key_2 in collect_1) and (not key_2 in average_rating):
+            average_rating[key_2] = value_2
+
+my_list = average_rating.items()
+print(my_list)
