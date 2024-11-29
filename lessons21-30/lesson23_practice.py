@@ -36,3 +36,14 @@ number = random.randint(1, 100)
 
 # Ваше решение:
 
+while True:
+    attempt = input('Enter your number from 1 to 100: ')
+    if attempt == 'exit':
+        break
+    elif int(attempt)<number:
+        print('Your number less than the hidden number!')
+    elif int(attempt)>number:
+        print('Your number big than the hidden number!')
+    elif int(attempt) == number:
+        print('You guessed in right!')
+        break
