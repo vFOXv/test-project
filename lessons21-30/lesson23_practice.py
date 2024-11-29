@@ -39,6 +39,7 @@ number = random.randint(1, 100)
 while True:
     attempt = input('Enter your number from 1 to 100: ')
     if attempt == 'exit':
+        print('You are out from the game!')
         break
     elif int(attempt)<number:
         print('Your number less than the hidden number!')
