@@ -23,3 +23,7 @@ third_channel_subscribers = {"Иван", "Мария", "Дмитрий", "Вен
 
 # Ваше решение:
 
+solution = first_channel_subscribers.copy()
+solution.intersection_update(second_channel_subscribers)
+solution.intersection_update(third_channel_subscribers)
+print(solution)
