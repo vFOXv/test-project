@@ -31,3 +31,31 @@
 
 # Ваше решение:
 
+my_str = ''
+
+while True:
+    my_str = input('Enter number: ')
+    if not my_str.isdigit():
+        print("You didn't enter number!")
+        continue
+    else:
+        break
+
+number = int(my_str)
+
+for iter in range(number):
+    if (number%(iter+1) == 0) and (0 < iter < number-1):
+        print('FOR///The number you entered is not prime!')
+        break
+else:
+    print('FOR///The number you entered is prime!')
+
+i = 1
+while i < number:
+    if (number%i == 0) and (1 < i < number):
+        print('WHILE/The number you entered is not prime!')
+        break
+    i += 1
+else:
+    i = number
+    print('WHILE/The number you entered is prime!')
