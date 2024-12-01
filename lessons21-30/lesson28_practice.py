@@ -101,4 +101,73 @@
 
 
 # Ваше решение:
+# create dict
+store = {}
+while True:
+    print('\n' + '-'*50 + '\n')
+    print('1. Добавить новый товар: ')
+    print('2. Удалить существующий ')
+    print('3. Изменить существующий ')
+    print('4. Показать список ')
+    print('5. Выход ')
 
+    print()
+
+    num = input("ВВЕДИТЕ НОМЕР ПУНКТА: ")
+
+    if not num.isdigit():
+        print('Вы ввели не число! Введите число от 1 до 5!')
+        continue
+    else:
+        number = int(num)
+
+    if number == 1:
+        # Добавить новый товар
+        key = input("Введите уникальный ключ: ")
+        if key in store:
+            print('Такой ключ уже существует!')
+            print()
+            continue
+
+        title = input('Введите название: ')
+        price = float(input('Введите цену: '))
+        quantity = float(input('Введите количество: '))
+        unit = input('Введите единицу измерения(кг,шт, л): ')
+        store[key] = ({"key": key, "title": title, "price": price, "quantity": quantity, "unit": unit})
+        print(f"Товар {key} добавлен в базу.")
+    elif number == 2:
+        my_dell = input('Введите уникальный ключ удаляемого товара: ')
+        if my_dell in store:
+            removed = store.pop(my_dell, 'not found')
+            print(f'Удален товар: {removed['title']}')
+        else:
+            print("Такого ключа нет в базе!")
+            continue
+    elif number == 3:
+        key = input('Введите уникальный ключ изменяемого товара: ')
+        if key in store:
+            change_product = store[key]
+            title = input(f'Введите название ({change_product['title']}): ') or change_product['title']
+            price = (input(f'Введите цену ({change_product['price']}): ')) or change_product['price']
+            quantity = (input(f'Введите количество ({change_product['quantity']}): ')) or change_product['quantity']
+            unit = input(f'Введите единицу измерения(кг,шт, л) ({change_product['unit']}): ') or change_product['unit']
+            store[key] = ({"title": title,
+                           "price": float(price),
+                           "quantity": float(quantity),
+                           "unit": unit})
+            print(f'Товар с ключом {store[key]} изменен!')
+        else:
+            print("Такого ключа нет в базе!")
+            continue
+    elif number == 4:
+        if not store:
+            print('База пуста!')
+            continue
+        else:
+            for index, (key, product) in enumerate(store.items(), start =1):
+                print(f"{index}.  key - {product['title']} (${product['price']}) x {product['quantity']} {product['unit']})")
+    elif number == 5:
+        print('Выход.')
+        break
+    else:
+        print('Вы ввели неправильный номер пункта! Введите число от 1 до 5!')
